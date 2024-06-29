@@ -1,48 +1,40 @@
-import {useState} from 'react';
-
-function Carousel() {
-    const carouselItems = [
-        {
-            imageUrl: 'src/assets/Carousel/1.jpg',
-            title: 'Hollow Knight',
-            subtitle: 'Explore the vast underground world of Hallownest',
-            buttonLink: "www.google.com",
-            buttonText: "Click to Learn More"
-        }
-    ];
-    const [currentItem, setCurrentItem] = useState(0);
-    const nextSlide = () => {
-        setCurrentItem((currentItem + 1) % carouselItems.length);
-    };
-    const prevSlide = () => {
-        setCurrentItem((currentItem - 1 + carouselItems.length) % carouselItems.length);
-    };
-
-    return (
-        <div className="relative flex justify-center items-center font-body text-text">
-        {carouselItems.map((item, index) => (
-          <div
-            key={index}
-            className={`w-full h-96 bg-center bg-cover p-4 transition-opacity duration-500 ease-in-out ${index === currentItem ? 'opacity-100' : 'opacity-0'}`}
-            style={{ backgroundImage: `url(${item.imageUrl})` }}
-          >
-            <div className='flex flex-col items-center justify-center h-full'>
-                <h2 className="text-xl font-bold">{item.title}</h2>
-                <p>{item.subtitle}</p>
-                <a href={item.buttonLink} className="mt-4 inline-block bg-primary py-2 px-4 rounded">
-                  {item.buttonText}
-                </a>
+import { Carousel, Typography, Button } from "@material-tailwind/react";
+ 
+export function CarouselWithContent() {
+  return (
+    <Carousel>
+      <div className="relative h-full w-full">
+        <img
+          src="src/assets/Carousel/1.jpg"
+          alt="image 1"
+          className="h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
+          <div className="w-3/4 text-center md:w-2/4">
+            <Typography
+              variant="h1"
+              color="white"
+              className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+            >
+              Hollow Knight
+            </Typography>
+            <Typography
+              variant="lead"
+              color="white"
+              className="mb-12 opacity-80"
+            >
+                Explore the vast and beautiful world of Hallownest.
+            </Typography>
+            <div className="flex justify-center gap-2">
+              <Button className="bg-primary text-text" size="lg">
+                Click to Learn More!
+              </Button>
             </div>
           </div>
-        ))}
-        <button onClick={prevSlide} className=" text-2xl absolute left-0 z-30 ml-2">
-          &#10094;
-        </button>
-        <button onClick={nextSlide} className=" text-2xl absolute right-0 z-30 mr-2">
-          &#10095;
-        </button>
+        </div>
       </div>
-    );
+    </Carousel>
+  );
 }
 
-export default Carousel;
+export default CarouselWithContent;
