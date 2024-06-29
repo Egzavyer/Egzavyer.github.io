@@ -6,7 +6,7 @@ function Landing() {
   return (
     <>
       <Navbar />
-      <Carousel/>
+      <Carousel />
     </>
   )
 }
