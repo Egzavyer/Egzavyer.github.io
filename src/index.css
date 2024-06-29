@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+      font-family: 'Jockey One';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(./fonts/JockeyOne-Regular.ttf) format('truetype');
+    }
+    @font-face {
+      font-family: 'Istok Web';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url(./fonts/IstokWeb/IstokWeb-Regular.ttf) format('truetype');
+    }
+  }
