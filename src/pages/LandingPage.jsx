@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar'
 import Carousel from '../components/Carousel'
 import EventCard from '../components/EventCard'
+import Footer from '../components/Footer'
 
 function Landing() {
 
@@ -20,8 +21,9 @@ function Landing() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
-  )
+  );
 }
 
 export default Landing
