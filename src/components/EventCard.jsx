@@ -8,7 +8,7 @@ const EventCard = ({ imagePath, name, description, link }) => {
                 <img src={imagePath} alt="event" className="w-full h-40 object-cover rounded-t-lg" />
                 <div className="p-4 text-primary font-body">
                     <h1 className="flex text-xl justify-center">{name}</h1>
-                    <p className="text-sm ">{description}</p>
+                    <p className="text-sm py-2">{description}</p>
                     <Link to={link} className="text-primary underline">Click to Learn More</Link>
                 </div>
             </div>

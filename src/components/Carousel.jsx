@@ -46,14 +46,14 @@ export function CarouselWithContent() {
                 color="white"
                 className="mb-4 text-3xl md:text-4xl lg:text-5xl"
               >
-                Hollow Knight
+                New Release Highlight: Constellation
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
                 className="mb-12 opacity-80"
               >
-                Explore the vast and beautiful world of Hallownest.
+                Conquer the galaxy in this new space exploration game.
               </Typography>
               <div className="flex justify-center gap-2">
                 <Button className="bg-primary text-text" size="lg">
