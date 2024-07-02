@@ -14,20 +14,18 @@ export function CarouselWithContent() {
             <div className="w-3/4 text-center md:w-2/4">
               <Typography
                 variant="h1"
-                color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl text-text font-body"
               >
                 Hollow Knight
               </Typography>
               <Typography
                 variant="lead"
-                color="white"
-                className="mb-12 opacity-80"
+                className="mb-12 opacity-80 text-text font-body"
               >
                 Explore the vast and beautiful world of Hallownest.
               </Typography>
               <div className="flex justify-center gap-2">
-                <Button className="bg-primary text-text" size="lg">
+                <Button className="bg-primary text-text font-body" size="lg">
                   Click to Learn More!
                 </Button>
               </div>
