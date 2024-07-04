@@ -1,13 +1,10 @@
-import Navbar from '../components/Navbar'
 import Carousel from '../components/Carousel'
 import EventCard from '../components/EventCard'
-import Footer from '../components/Footer'
 
 function Landing() {
 
   return (
     <>
-      <Navbar />
       <Carousel />
       <div className="flex container mx-auto justify-center py-10">
         <div className='flex flex-col'>
@@ -21,7 +18,6 @@ function Landing() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
