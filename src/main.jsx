@@ -10,6 +10,109 @@ import Community from './pages/CommunityPage.jsx'
 import Footer from './components/Footer.jsx';
 import './index.css'
 
+const games = [
+  {
+    title: "Neon Noir",
+    description: "Delve into a neo-noir detective story in a rain-drenched cyberpunk metropolis. Make tough choices, and fight for justice in this point-and-click adventure.",
+    genre: "Action, Adventure",
+    image: "../src/assets/Games/NeonNoir.jpg",
+    platform: "Windows",
+    developer: "CyberCode Studios",
+    releaseDate: "2023-10-15",
+    score: 85,
+    reviewsCount: 1280
+  },
+  {
+    title: "Oddwing",
+    description: "Embrace your imperfections! Help a lovable creature with mismatched wings overcome the odds and soar through a world that celebrates individuality.",
+    genre: "Platformer, Adventure",
+    image: "../src/assets/Games/Oddwing.jpg",
+    platform: "Web",
+    developer: "Quirky Quest",
+    releaseDate: "2024-02-20",
+    score: 92,
+    reviewsCount: 850
+  },
+  {
+    title: "Whispering Pines",
+    description: "Find solace in the tranquility of nature. Build a cozy life in a charming cottage nestled within a whispering pine forest. Tend your garden, and uncover the secrets of the woods at your own pace.",
+    genre: "Adventure, Simulation",
+    image: "../src/assets/Games/WhisperingPines.jpg",
+    platform: "Playstation",
+    developer: "Forest Dreams",
+    releaseDate: "2023-12-05",
+    score: 88,
+    reviewsCount: 1075
+  },
+  {
+    title: "Shelled City",
+    description: "Explore a charming city that thrives on the back of a colossal, wandering turtle! Uncover its secrets and befriend its quirky inhabitants.",
+    genre: "Simulation, Adventure",
+    image: "../src/assets/Games/ShelledCity.jpg",
+    platform: "MacOS",
+    developer: "Turtle Ventures",
+    releaseDate: "2024-01-18",
+    score: 80,
+    reviewsCount: 640
+  },
+  {
+    title: "Kitchen Chaos",
+    description: "It's culinary carnage! Prepare for kitchen mayhem in this frantic side-scrolling action game. Slice, dice, and cook your way through hordes of hungry ingredients to conquer the culinary chaos.",
+    genre: "Action, Arcade",
+    image: "../src/assets/Games/KitchenChaos.jpg",
+    platform: "Web",
+    developer: "Chaos Kitchen Co.",
+    releaseDate: "2023-11-10",
+    score: 75,
+    reviewsCount: 720
+  },
+  {
+    title: "Constellation",
+    description: "Teamwork is key in this cooperative puzzle game! Communicate effectively and solve mind-bending puzzles as a crew of astronauts on a thrilling mission through the cosmos.",
+    genre: "Puzzle, CO-OP",
+    image: "../src/assets/Games/Constellation.jpg",
+    platform: "Xbox",
+    developer: "Cosmic Games",
+    releaseDate: "2024-03-25",
+    score: 90,
+    reviewsCount: 930
+  },
+  {
+    title: "Song Weaver",
+    description: "Craft melodies with moonlight! Explore a world bathed in ethereal light, befriend fantastical creatures, solve melodic puzzles, and restore balance to a world out of tune.",
+    genre: "Puzzle, Adventure",
+    image: "../src/assets/Games/SongWeaver.jpg",
+    platform: "Switch",
+    developer: "Melody Makers",
+    releaseDate: "2023-09-22",
+    score: 87,
+    reviewsCount: 1050
+  },
+  {
+    title: "Chroma Shift",
+    description: "Paint the universe in this zero-gravity action-puzzler! Solve colorful challenges and navigate treacherous landscapes in a race against time.",
+    genre: "Action, Puzzle",
+    image: "../src/assets/Games/ChromaShift.jpg",
+    platform: "Playstation",
+    developer: "Colorful Studios",
+    releaseDate: "2024-05-30",
+    score: 83,
+    reviewsCount: 790
+  },
+  {
+    title: "Purrfect Flight",
+    description: "Take to the skies as a jetpack-wearing feline adventurer! Explore a jungle, discover hidden treasures, and outsmart adorable creatures in this purrfectly delightful platformer.",
+    genre: "Casual, Platformer",
+    image: "../src/assets/Games/PurrfectFlight.jpg",
+    platform: "Windows",
+    developer: "CatVentures",
+    releaseDate: "2024-06-12",
+    score: 89,
+    reviewsCount: 870
+  }
+];
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <React.StrictMode>
@@ -17,7 +120,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/games" element={<Games />} />
-        <Route path="/game/:id" component={GameViewer} />
+        <Route path="/games/:title" element={<GameViewer games={games} />} />
         <Route path="/community" element={<Community />} />
       </Routes>
       <Footer />

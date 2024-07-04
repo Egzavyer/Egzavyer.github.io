@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import GameCard from './GameCard';
+import { Link } from 'react-router-dom';
 
 const GameGrid = ({ games, searchQuery, filter }) => {
 
@@ -14,14 +15,16 @@ const GameGrid = ({ games, searchQuery, filter }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
             {filteredGames.length > 0 ? (
                 filteredGames.map((game, index) => (
-                    <GameCard
-                        key={index}
-                        title={game.title}
-                        description={game.description}
-                        genre={game.genre}
-                        image={game.image}
-                        platform={game.platform}
-                    />
+                    <Link key={index} to={`/games/${game.title}`}>
+                        <GameCard
+                            key={index}
+                            title={game.title}
+                            description={game.description}
+                            genre={game.genre}
+                            image={game.image}
+                            platform={game.platform}
+                        />
+                    </Link>
                 ))
             ) : (
                 <p className="col-span-full text-center text-secondary">No games found</p>
