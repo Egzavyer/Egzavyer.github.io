@@ -1,10 +1,12 @@
+import ThreadList from '../components/ThreadList'
+
 function Community() {
 
-    return (
-      <>
-      </>
-    )
-  }
-  
-  export default Community
-  
+  return (
+    <>
+      <ThreadList />
+    </>
+  )
+}
+
+export default Community
