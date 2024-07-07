@@ -20,7 +20,7 @@ function Modal({ onClose, children }) {
                     className="mt-4 bg-red-600 text-text py-2 px-4 rounded w-full"
                     onClick={onClose}
                 >
-                    Close
+                    Cancel
                 </button>
             </div>
         </div>
