@@ -7,7 +7,7 @@ const GameCard = ({ title, description, genre, image, platform }) => {
         <div className="bg-text rounded-lg shadow-md overflow-hidden relative">
             <div className="absolute top-0 left-0 p-1 bg-primary text-text text-xs font-semibold rounded-br-lg">{genre}</div>
             <img src={image} alt={title} className="w-full h-48 object-cover" />
-            <div className="p-4">
+            <div className="p-4 h-44">
                 <h3 className="text-lg font-bold">{title}</h3>
                 <p className="text-sm text-secondary">{description}</p>
             </div>
