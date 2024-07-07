@@ -9,7 +9,7 @@ const Games = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    fetch('src/games.json')
+    fetch('../src/games.json')
       .then(response => response.json())
       .then(data => setGames(data))
       .catch(error => console.error("Failed to load game data:", error));

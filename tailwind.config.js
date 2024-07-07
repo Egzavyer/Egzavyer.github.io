@@ -2,7 +2,7 @@
 import withMT from "@material-tailwind/react/utils/withMT";
 
 export default withMT({
-	content: ["./src/**/*.{jsx,js,ts,tsx}"],
+	content: ["./public/src/**/*.{jsx,js,ts,tsx}"],
 	theme: {
 		fontFamily: {
 			display: ["Jockey One", "sans-serif"],
