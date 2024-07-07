@@ -46,8 +46,8 @@ const FilterSidebar = ({ filter, setFilter }) => {
             <div className="mb-4">
                 <label className="block mb-2 font-semibold">Score</label>
                 <select className="w-full p-2 border border-text rounded" value={filter.sort} onChange={handleSortChange}>
-                    <option>Low-to-High</option>
                     <option>High-to-Low</option>
+                    <option>Low-to-High</option>
                 </select>
             </div>
         </div>
