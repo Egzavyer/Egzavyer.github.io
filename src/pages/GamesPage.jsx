@@ -5,7 +5,7 @@ import GameGrid from '../components/GameGrid'
 
 const Games = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filter, setFilter] = useState({ genre: '', platform: '' });
+  const [filter, setFilter] = useState({ genre: '', platform: '', sort: '' });
   const [games, setGames] = useState([]);
 
   useEffect(() => {

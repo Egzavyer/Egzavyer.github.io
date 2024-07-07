@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 const GameGrid = ({ games, searchQuery, filter }) => {
 
-    const filteredGames = games.filter((game) => {
+    const sortedGames = filter.sort === "High-to-Low" ? games.sort((a, b) => b.score - a.score) : games.sort((a, b) => a.score - b.score);
+
+    const filteredGames = sortedGames.filter((game) => {
         const matchesSearchQuery = game.title.toLowerCase().includes(searchQuery.toLowerCase());
         const matchesGenre = filter.genre === 'All' || game.genre.includes(filter.genre);
         const matchesPlatform = filter.platform === 'All' || game.platform.includes(filter.platform);

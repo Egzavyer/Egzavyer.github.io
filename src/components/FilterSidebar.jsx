@@ -10,6 +10,10 @@ const FilterSidebar = ({ filter, setFilter }) => {
         setFilter({ ...filter, platform: e.target.value });
     };
 
+    const handleSortChange = (e) => {
+        setFilter({ ...filter, sort: e.target.value });
+    };
+
     return (
         <div className="w-64 p-4 bg-text text-primary">
             <h2 className="text-xl  font-bold mb-4">Filter Search</h2>
@@ -37,6 +41,13 @@ const FilterSidebar = ({ filter, setFilter }) => {
                     <option>Puzzle</option>
                     <option>CO-OP</option>
                     <option>Ardcade</option>
+                </select>
+            </div>
+            <div className="mb-4">
+                <label className="block mb-2 font-semibold">Score</label>
+                <select className="w-full p-2 border border-text rounded" value={filter.sort} onChange={handleSortChange}>
+                    <option>Low-to-High</option>
+                    <option>High-to-Low</option>
                 </select>
             </div>
         </div>
