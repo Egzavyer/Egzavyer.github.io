@@ -25,6 +25,7 @@ const GameGrid = ({ games, searchQuery, filter }) => {
                             genre={game.genre}
                             image={game.image}
                             platform={game.platform}
+                            score={game.score}
                         />
                     </Link>
                 ))
