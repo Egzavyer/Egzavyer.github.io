@@ -84,7 +84,6 @@ function ThreadList() {
 
     return (
         <div className="flex-grow p-6 font-body text-primary">
-            <h1 className="text-5xl font-display mb-6">Community Posts</h1>
             <table className="w-full">
                 <thead>
                     <tr className="text-left text-lg font-display">
