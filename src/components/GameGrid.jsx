@@ -2,7 +2,14 @@ import PropTypes from 'prop-types';
 import GameCard from './GameCard';
 import { Link } from 'react-router-dom';
 
-const GameGrid = ({ games, searchQuery, filter }) => {
+const GameGrid = ({ language, games, searchQuery, filter }) => {
+
+    const translations = {
+        noGamesFound: {
+            en: "No games found",
+            fr: "Aucun jeu trouvé",
+        },
+    };
 
     const sortedGames = filter.sort === "High-to-Low" ? games.sort((a, b) => b.score - a.score) : games.sort((a, b) => a.score - b.score);
 
@@ -30,7 +37,7 @@ const GameGrid = ({ games, searchQuery, filter }) => {
                     </Link>
                 ))
             ) : (
-                <p className="col-span-full text-center text-secondary">No games found</p>
+                <p className="col-span-full text-center text-secondary">{translations.noGamesFound[language]}</p>
             )}
         </div>
     );

@@ -1,5 +1,12 @@
 import PropTypes from 'prop-types';
-const SearchBar = ({ searchQuery, setSearchQuery }) => {
+const SearchBar = ({ language, searchQuery, setSearchQuery }) => {
+
+    const translations = {
+        searchGames: {
+            en: "Search Games...",
+            fr: "Rechercher des Jeux...",
+        },
+    };
 
     const handleChange = (e) => {
         setSearchQuery(e.target.value);
@@ -10,7 +17,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
             <input
                 type="text"
                 className="w-full p-2 border border-secondary rounded"
-                placeholder="Search Games..."
+                placeholder={translations.searchGames[language]}
                 value={searchQuery}
                 onChange={handleChange}
             />

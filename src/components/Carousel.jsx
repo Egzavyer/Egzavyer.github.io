@@ -1,6 +1,20 @@
 import { Carousel, Typography, Button } from "@material-tailwind/react";
 
-export function CarouselWithContent() {
+export function CarouselWithContent({ language }) {
+  const translations = {
+    desc1: {
+      en: "Explore the vast and beautiful world of Hallownest.",
+      fr: "Explorez le vaste et magnifique monde de Hallownest."
+    },
+    desc2: {
+      en: "Conquer the galaxy in this new space exploration game.",
+      fr: "Conquérez la galaxie dans ce nouveau jeu d'exploration spatiale."
+    },
+    click: {
+      en: "Click to Learn More!",
+      fr: "Cliquez pour en savoir plus!"
+    }
+  };
   return (
     <div className="w-full mx-auto overflow-hidden h-96" >
       <Carousel>
@@ -22,11 +36,11 @@ export function CarouselWithContent() {
                 variant="lead"
                 className="mb-12 opacity-80 text-text font-body"
               >
-                Explore the vast and beautiful world of Hallownest.
+                {translations.desc1[language]}
               </Typography>
               <div className="flex justify-center gap-2">
                 <Button className="bg-primary text-text font-body" size="lg">
-                  Click to Learn More!
+                  {translations.click[language]}
                 </Button>
               </div>
             </div>
@@ -46,18 +60,18 @@ export function CarouselWithContent() {
                 color="white"
                 className="mb-4 text-3xl md:text-4xl lg:text-5xl"
               >
-                New Release Highlight: Constellation
+                Constellation
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
                 className="mb-12 opacity-80"
               >
-                Conquer the galaxy in this new space exploration game.
+                {translations.desc2[language]}
               </Typography>
               <div className="flex justify-center gap-2">
                 <Button className="bg-primary text-text" size="lg">
-                  Click to Learn More!
+                  {translations.click[language]}
                 </Button>
               </div>
             </div>

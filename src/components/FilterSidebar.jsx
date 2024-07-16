@@ -1,6 +1,49 @@
 import PropTypes from 'prop-types';
 
-const FilterSidebar = ({ filter, setFilter }) => {
+const FilterSidebar = ({ language, filter, setFilter }) => {
+
+    const translations = {
+        filter: {
+            en: "Filter Search",
+            fr: "Filtrer la Recherche",
+        },
+        platform: {
+            en: "Platform",
+            fr: "Plateforme",
+        },
+        genre: {
+            en: "Genre",
+            fr: "Genre",
+        },
+        score: {
+            en: "Score",
+            fr: "Score",
+        },
+        highToLow: {
+            en: "High-to-Low",
+            fr: "Élevé à Faible",
+        },
+        lowToHigh: {
+            en: "Low-to-High",
+            fr: "Faible à Élevé",
+        },
+        all: {
+            en: "All",
+            fr: "Tout",
+        },
+        action: {
+            en: "Action",
+            fr: "Action",
+        },
+        adventure: {
+            en: "Adventure",
+            fr: "Aventure",
+        },
+        casual: {
+            en: "Casual",
+            fr: "Décontracté",
+        },
+    };
 
     const handleGenreChange = (e) => {
         setFilter({ ...filter, genre: e.target.value });
@@ -16,11 +59,11 @@ const FilterSidebar = ({ filter, setFilter }) => {
 
     return (
         <div className="w-64 p-4 bg-text text-primary">
-            <h2 className="text-xl  font-bold mb-4">Filter Search</h2>
+            <h2 className="text-xl  font-bold mb-4">{translations.filter[language]}</h2>
             <div className="mb-4">
-                <label className="block mb-2 font-semibold">Platform</label>
+                <label className="block mb-2 font-semibold">{translations.platform[language]}</label>
                 <select className="w-full p-2 border border-text rounded" value={filter.platform} onChange={handlePlatformChange}>
-                    <option>All</option>
+                    <option>{translations.all[language]}</option>
                     <option>Windows</option>
                     <option>MacOS</option>
                     <option>Switch</option>
@@ -32,22 +75,22 @@ const FilterSidebar = ({ filter, setFilter }) => {
             <div className="mb-4">
                 <label className="block mb-2 font-semibold">Genre</label>
                 <select className="w-full p-2 border border-text rounded" value={filter.genre} onChange={handleGenreChange}>
-                    <option>All</option>
-                    <option>Action</option>
-                    <option>Adventure</option>
-                    <option>Casual</option>
+                    <option>{translations.all[language]}</option>
+                    <option>{translations.action[language]}</option>
+                    <option>{translations.adventure[language]}</option>
+                    <option>{translations.casual[language]}</option>
                     <option>Platformer</option>
                     <option>Sim</option>
                     <option>Puzzle</option>
                     <option>CO-OP</option>
-                    <option>Ardcade</option>
+                    <option>Arcade</option>
                 </select>
             </div>
             <div className="mb-4">
                 <label className="block mb-2 font-semibold">Score</label>
                 <select className="w-full p-2 border border-text rounded" value={filter.sort} onChange={handleSortChange}>
-                    <option>High-to-Low</option>
-                    <option>Low-to-High</option>
+                    <option>{translations.highToLow[language]}</option>
+                    <option>{translations.lowToHigh[language]}</option>
                 </select>
             </div>
         </div>
