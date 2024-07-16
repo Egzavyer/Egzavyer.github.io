@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { getPlatform } from '../utils/getPlatform';
 
 const GameCard = ({ title, description, genre, image, platform, score }) => {
+
     const platformLogo = getPlatform(platform);
     return (
         <div className="bg-text rounded-lg shadow-md overflow-hidden relative">

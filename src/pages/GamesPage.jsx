@@ -9,12 +9,15 @@ const Games = ({ language }) => {
   const [filter, setFilter] = useState({ genre: '', platform: '', sort: 'High-to-Low' });
   const [games, setGames] = useState([]);
 
+  let documentTitle = 'src/gamesEN.json';
+  { language === 'en' ? documentTitle = 'src/gamesEN.json' : documentTitle = 'src/gamesFR.json' }
+
   useEffect(() => {
-    fetch('src/games.json')
+    fetch(documentTitle)
       .then(response => response.json())
       .then(data => setGames(data))
       .catch(error => console.error("Failed to load game data:", error));
-  }, []);
+  });
 
   return (
     <>

@@ -1,0 +1,101 @@
+[
+    {
+      "title": "Neon Noir",
+      "description": "Plongez dans une histoire de détective néo-noir dans une métropole cyberpunk trempée de pluie. Faites des choix difficiles et luttez pour la justice dans cette aventure point-and-click.",
+      "genre": "Action, Aventure",
+      "image": "../src/assets/Games/NeonNoir.jpg",
+      "platform": "Windows",
+      "developer": "CyberCode Studios",
+      "releaseDate": "2023-10-15",
+      "score": 85,
+      "reviewsCount": 1280
+    },
+    {
+      "title": "Oddwing",
+      "description": "Acceptez vos imperfections! Aidez une créature adorable aux ailes dépareillées à surmonter les obstacles et à voler dans un monde qui célèbre l'individualité.",
+      "genre": "Plateforme, Aventure",
+      "image": "../src/assets/Games/Oddwing.jpg",
+      "platform": "Web",
+      "developer": "Quirky Quest",
+      "releaseDate": "2024-02-20",
+      "score": 92,
+      "reviewsCount": 850
+    },
+    {
+      "title": "Whispering Pines",
+      "description": "Trouvez du réconfort dans la tranquillité de la nature. Construisez une vie douillette dans un charmant cottage niché dans une forêt de pins chuchotants. Entretenez votre jardin et découvrez les secrets des bois à votre propre rythme.",
+      "genre": "Aventure, Simulation",
+      "image": "../src/assets/Games/WhisperingPines.jpg",
+      "platform": "Playstation",
+      "developer": "Forest Dreams",
+      "releaseDate": "2023-12-05",
+      "score": 88,
+      "reviewsCount": 1075
+    },
+    {
+      "title": "Shelled City",
+      "description": "Explorez une charmante ville qui prospère sur le dos d'une tortue colossale et errante! Découvrez ses secrets et liez-vous d'amitié avec ses habitants excentriques.",
+      "genre": "Simulation, Aventure",
+      "image": "../src/assets/Games/ShelledCity.jpg",
+      "platform": "MacOS",
+      "developer": "Turtle Ventures",
+      "releaseDate": "2024-01-18",
+      "score": 80,
+      "reviewsCount": 640
+    },
+    {
+      "title": "Kitchen Chaos",
+      "description": "C'est le carnage culinaire! Préparez-vous pour le chaos dans la cuisine dans ce jeu d'action frénétique à défilement latéral. Tranchez, coupez en dés et cuisinez pour conquérir le chaos culinaire.",
+      "genre": "Action, Arcade",
+      "image": "../src/assets/Games/KitchenChaos.jpg",
+      "platform": "Web",
+      "developer": "Chaos Kitchen Co.",
+      "releaseDate": "2023-11-10",
+      "score": 75,
+      "reviewsCount": 720
+    },
+    {
+      "title": "Constellation",
+      "description": "Le travail d'équipe est essentiel dans ce jeu de puzzle coopératif! Communiquez efficacement et résolvez des puzzles complexes en tant qu'équipage d'astronautes en mission à travers le cosmos.",
+      "genre": "Puzzle, CO-OP",
+      "image": "../src/assets/Games/Constellation.jpg",
+      "platform": "Xbox",
+      "developer": "Cosmic Games",
+      "releaseDate": "2024-03-25",
+      "score": 90,
+      "reviewsCount": 930
+    },
+    {
+      "title": "Song Weaver",
+      "description": "Créez des mélodies avec la lumière de la lune! Explorez un monde baigné de lumière éthérée, liez-vous d'amitié avec des créatures fantastiques, résolvez des puzzles mélodiques et rétablissez l'équilibre dans un monde désaccordé.",
+      "genre": "Puzzle, Aventure",
+      "image": "../src/assets/Games/SongWeaver.jpg",
+      "platform": "Switch",
+      "developer": "Melody Makers",
+      "releaseDate": "2023-09-22",
+      "score": 87,
+      "reviewsCount": 1050
+    },
+    {
+      "title": "Chroma Shift",
+      "description": "Peignez l'univers dans ce jeu d'action-puzzle en apesanteur! Résolvez des défis colorés et naviguez dans des paysages traîtres dans une course contre la montre.",
+      "genre": "Action, Puzzle",
+      "image": "../src/assets/Games/ChromaShift.jpg",
+      "platform": "Playstation",
+      "developer": "Colorful Studios",
+      "releaseDate": "2024-05-30",
+      "score": 83,
+      "reviewsCount": 790
+    },
+    {
+      "title": "Purrfect Flight",
+      "description": "Prenez votre envol en tant qu'aventurier félin équipé d'un jetpack! Explorez une jungle, découvrez des trésors cachés et déjouez des créatures adorables dans ce jeu de plateforme parfaitement délicieux.",
+      "genre": "Casual, Plateforme",
+      "image": "../src/assets/Games/PurrfectFlight.jpg",
+      "platform": "Windows",
+      "developer": "CatVentures",
+      "releaseDate": "2024-06-12",
+      "score": 89,
+      "reviewsCount": 870
+    }
+  ]
