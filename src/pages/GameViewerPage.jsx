@@ -1,8 +1,47 @@
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Review from '../components/Review';
+import { useState } from 'react';
 
 const GameViewerPage = ({ language, games }) => {
+
+  const [reviews, setReviews] = useState([]);
+  const [newReview, setNewReview] = useState({ name: '', reviewText: '', rating: 0 });
+  const [formErrors, setFormErrors] = useState({
+    name: '',
+    reviewText: '',
+    rating: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewReview({ ...newReview, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setFormErrors({ name: '', reviewText: '', rating: '' });
+
+    const errors = {
+      name: newReview.name ? '' : translations.nameEmpty[language],
+      reviewText: newReview.reviewText ? '' : translations.reviewTextEmpty[language],
+      rating: newReview.rating ? '' : translations.ratingEmpty[language],
+    };
+
+    setFormErrors(errors);
+
+    if (!newReview.name || !newReview.reviewText || !newReview.rating) {
+      console.log('Please fill in all fields.');
+      return;
+    }
+    addReview(newReview);
+    setNewReview({ name: '', reviewText: '', rating: 0 });
+  };
+
+  const addReview = (review) => {
+    setReviews([...reviews, review]);
+  };
 
   const translations = {
     developer: {
@@ -23,11 +62,11 @@ const GameViewerPage = ({ language, games }) => {
     },
     writeYourOwnReview: {
       en: "Write your Own Review",
-      fr: "Écrivez votre propre critique",
+      fr: "Écrivez Votre Propre Critique",
     },
     gameNotFound: {
-      en: "Game not found",
-      fr: "Jeu non trouvé",
+      en: "Game not Found",
+      fr: "Jeu non Trouvé",
     },
     accordingTo: {
       en: "According to ",
@@ -38,9 +77,21 @@ const GameViewerPage = ({ language, games }) => {
       fr: " Critiques",
     },
     tellDevelopers: {
-      en: "Tell the developers what you think about the game",
-      fr: "Dites aux développeurs ce que vous pensez du jeu",
-    }
+      en: "Tell the Developers What you Think About the Game",
+      fr: "Dites aux Développeurs ce que vous Pensez du Jeu",
+    },
+    nameEmpty: {
+      en: "Name is Required",
+      fr: "Nom est Requis",
+    },
+    reviewTextEmpty: {
+      en: "Review Text is Required",
+      fr: "Le Texte de la Critique est Requis",
+    },
+    ratingEmpty: {
+      en: "Rating is Required",
+      fr: "La Note est Requise",
+    },
 
   }
 
@@ -86,20 +137,37 @@ const GameViewerPage = ({ language, games }) => {
               </div>
               <div className="md:w-1/2 mt-4 md:mt-0">
                 <h3 className="text-xl font-semibold mb-2">{translations.writeYourOwnReview[language]}</h3>
-                <textarea className="w-full p-2 border border-text rounded mb-2" placeholder={translations.tellDevelopers[language]}></textarea>
-                <div className="flex flex-row gap-3 justify-center mb-2">
-                  <select className="border border-text rounded p-2">
-                    <option value="">{translations.rateTheGame[language]}</option>
-                    {Array.from({ length: 10 }, (_, i) => (
-                      <option key={i + 1} value={i + 1}>
-                        {i + 1}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="flex justify-center">
-                    <button className="bg-primary text-text px-4 py-2 rounded">{translations.publish[language]}</button>
+                <form onSubmit={handleSubmit}>
+                  <input className='w-full' type="text" name="name" placeholder="Your Name" value={newReview.name} onChange={handleInputChange} />
+                  {formErrors.name && <p className="text-red-500">{formErrors.name}</p>}
+
+                  <textarea name="reviewText" className="w-full p-2 border border-text rounded mb-2" placeholder={translations.tellDevelopers[language]} value={newReview.reviewText} onChange={handleInputChange}></textarea>
+                  {formErrors.reviewText && <p className="text-red-500">{formErrors.reviewText}</p>}
+
+                  <div className="flex flex-row gap-3 justify-center mb-2">
+                    <select
+                      className="border border-text rounded p-2"
+                      name="rating"
+                      value={newReview.rating}
+                      onChange={handleInputChange}
+                    >
+                      <option value="">{translations.rateTheGame[language]}</option>
+                      {Array.from({ length: 10 }, (_, i) => (
+                        <option key={i + 1} value={i + 1}>
+                          {i + 1}
+                        </option>
+                      ))}
+                    </select>
+                    {formErrors.rating && <p className="text-red-500">{formErrors.rating}</p>}
+
+                    <div className="flex justify-center">
+                      <button type="submit" className="bg-primary text-text px-4 py-2 rounded">{translations.publish[language]}</button>
+                    </div>
                   </div>
-                </div>
+                </form>
+                {reviews.map((review, index) => (
+                  <Review key={index} name={review.name} reviewText={review.reviewText} rating={review.rating} />
+                ))}
                 <div>
                   <Review
                     name="John Doe"
@@ -112,7 +180,7 @@ const GameViewerPage = ({ language, games }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

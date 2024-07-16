@@ -9,7 +9,7 @@ function Landing({ language }) {
     },
     skullgirlsTournament: {
       en: "Join us again this year for the 3rd Indie Game Hub Annual Skullgirls Tournament!",
-      fr: "Rejoignez-nous cette année encore pour le 3e tournoi annuel Skullgirls d'Indie Game Hub!",
+      fr: "Rejoignez-nous pour le 3e tournoi annuel Skullgirls d'Indie Game Hub!",
     },
     hubJam: {
       en: "Attention Devs! HubJam starts in less than 3 weeks and the theme will soon be revealed!",
