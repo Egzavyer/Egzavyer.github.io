@@ -10,6 +10,7 @@ import Profile from './pages/ProfilePage.jsx'
 import Games from './pages/GamesPage.jsx'
 import GameViewer from './pages/GameViewerPage.jsx'
 import Community from './pages/CommunityPage.jsx'
+import FAQ from './pages/FAQPage.jsx'
 import Footer from './components/Footer.jsx';
 import './index.css'
 
@@ -237,7 +238,7 @@ function App() {
           <Route path="/games" element={<Games language={language} />} />
           <Route path="/games/:title" element={<GameViewer language={language} games={language === 'en' ? gamesEN : gamesFR} />} />
           <Route path="/community" element={<Community language={language} username={username} setUserEvents={setUserEvents} />} />
-
+          <Route path="/faq" element={<FAQ language={language} />} />
         </Routes>
         <Footer language={language} />
       </React.StrictMode>
