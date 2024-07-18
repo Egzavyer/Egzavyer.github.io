@@ -15,8 +15,8 @@ const GameGrid = ({ language, games, searchQuery, filter }) => {
 
     const filteredGames = sortedGames.filter((game) => {
         const matchesSearchQuery = game.title.toLowerCase().includes(searchQuery.toLowerCase());
-        const matchesGenre = filter.genre === 'All' || game.genre.includes(filter.genre);
-        const matchesPlatform = filter.platform === 'All' || game.platform.includes(filter.platform);
+        const matchesGenre = filter.genre === 'All' || game.genre.includes(filter.genre) || filter.genre === 'Tout' || game.genre.includes(filter.genre);
+        const matchesPlatform = filter.platform === 'All' || game.platform.includes(filter.platform) || filter.platform === 'Tout' || game.platform.includes(filter.platform);
         return matchesSearchQuery && matchesGenre && matchesPlatform;
     });
 

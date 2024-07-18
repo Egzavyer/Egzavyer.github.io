@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar.jsx';
 import Landing from './pages/LandingPage.jsx'
+import SignUp from './pages/SignUpPage.jsx'
+import LogIn from './pages/LoginPage.jsx'
 import Games from './pages/GamesPage.jsx'
 import GameViewer from './pages/GameViewerPage.jsx'
 import Community from './pages/CommunityPage.jsx'
@@ -217,16 +219,21 @@ const gamesFR = [
 
 function App() {
   const [language, setLanguage] = useState('en');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState('');
 
   return (
     <BrowserRouter>
       <React.StrictMode>
-        <Navbar language={language} setLanguage={setLanguage} />
+        <Navbar language={language} setLanguage={setLanguage} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} username={username} setUsername={setUsername} />
         <Routes>
           <Route path="/" element={<Landing language={language} />} />
+          <Route path='/signup' element={<SignUp language={language} />} />
+          <Route path='/login' element={<LogIn language={language} setIsAuthenticated={setIsAuthenticated} setUsername={setUsername} />} />
           <Route path="/games" element={<Games language={language} />} />
           <Route path="/games/:title" element={<GameViewer language={language} games={language === 'en' ? gamesEN : gamesFR} />} />
           <Route path="/community" element={<Community language={language} />} />
+
         </Routes>
         <Footer language={language} />
       </React.StrictMode>
