@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import ThreadContent from './ThreadContent';
 import Logo from '../assets/logo.svg';
 
-function ThreadRow({ thread, isExpanded, onToggle }) {
+function ThreadRow({ thread, isExpanded, onToggle, username }) {
     return (
         <>
             <tr className="border-t cursor-pointer" onClick={onToggle}>
@@ -14,7 +14,7 @@ function ThreadRow({ thread, isExpanded, onToggle }) {
                     {thread.author}
                 </td>
             </tr>
-            {isExpanded && <ThreadContent thread={thread} />}
+            {isExpanded && <ThreadContent thread={thread} username={username} />}
         </>
     );
 }

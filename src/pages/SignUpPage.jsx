@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function Signup({ language }) {
+function Signup({ language, setIsAuthenticated, setUsername }) {
 
     const translations = {
         username: {
@@ -62,7 +62,11 @@ function Signup({ language }) {
         e.preventDefault();
         if (validateForm()) {
             alert('Signup Successful');
-            // Here you would typically redirect the user or clear the form
+            setIsAuthenticated(true);
+            setUsername(userDetails.username);
+            userDetails.username = '';
+            userDetails.password = '';
+            userDetails.email = '';
         }
     };
 

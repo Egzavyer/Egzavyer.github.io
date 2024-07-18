@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ThreadList from '../components/ThreadList';
 import Modal from '../components/Modal';
 
-function Community({ language }) {
+function Community({ language, username }) {
   const translations = {
     communityPosts: {
       en: "Community Posts",
@@ -54,7 +54,7 @@ function Community({ language }) {
           </button>
         </div>
       </div>
-      <ThreadList />
+      <ThreadList username={username} />
       {isModalOpen && (
         <Modal onClose={toggleModal}>
           <form className="flex flex-col font-body gap-2 " onSubmit={handleSubmit}>
