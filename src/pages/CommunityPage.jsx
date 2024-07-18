@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ThreadList from '../components/ThreadList';
 import Modal from '../components/Modal';
 
-function Community({ language, username }) {
+function Community({ language, username, setUserEvents }) {
   const translations = {
     communityPosts: {
       en: "Community Posts",
@@ -38,6 +38,15 @@ function Community({ language, username }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form data submitted");
+    setUserEvents((prevEvents) => {
+      const newEvent = {
+        id: prevEvents.length + 1,
+        title: event.target.eventName.value,
+        startDate: event.target.startDate.value,
+        endDate: event.target.endDate.value,
+      };
+      return [...prevEvents, newEvent];
+    });
     toggleModal();
   };
 

@@ -3,19 +3,17 @@ import PropTypes from 'prop-types';
 
 function ThreadContent({ thread, username }) {
     const [newComment, setNewComment] = useState('');
-    const [comments, setComments] = useState(thread.comments); // Manage comments state locally
+    const [comments, setComments] = useState(thread.comments);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, newComment); // Log the new comment to the console
-        // Simulate submitting a new comment by updating the local state
+        console.log(username, newComment);
         const newCommentObject = {
-            // Assuming each comment has an author and text. Adjust as necessary.
-            author: username, // Static author name for demo purposes
+            author: username,
             text: newComment,
         };
-        setComments([...comments, newCommentObject]); // Add the new comment to the existing comments
-        setNewComment(''); // Clear the input field after submission
+        setComments([...comments, newCommentObject]);
+        setNewComment('');
     };
 
     return (

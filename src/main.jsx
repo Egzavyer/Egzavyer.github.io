@@ -222,6 +222,8 @@ function App() {
   const [language, setLanguage] = useState('en');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState('');
+  const [userEvents, setUserEvents] = useState([{ id: 1, title: "Game Launch Party", startDate: "2024-03-25" },
+  { id: 2, title: "Online Tournament", startDate: "2023-09-22" }]);
 
   return (
     <BrowserRouter>
@@ -231,10 +233,10 @@ function App() {
           <Route path="/" element={<Landing language={language} />} />
           <Route path='/signup' element={<SignUp language={language} setIsAuthenticated={setIsAuthenticated} setUsername={setUsername} />} />
           <Route path='/login' element={<LogIn language={language} setIsAuthenticated={setIsAuthenticated} setUsername={setUsername} />} />
-          <Route path='/profile' element={<Profile language={language} isAuthenticated={isAuthenticated} username={username} />} />
+          <Route path='/profile' element={<Profile language={language} isAuthenticated={isAuthenticated} username={username} userEvents={userEvents} />} />
           <Route path="/games" element={<Games language={language} />} />
           <Route path="/games/:title" element={<GameViewer language={language} games={language === 'en' ? gamesEN : gamesFR} />} />
-          <Route path="/community" element={<Community language={language} username={username} />} />
+          <Route path="/community" element={<Community language={language} username={username} setUserEvents={setUserEvents} />} />
 
         </Routes>
         <Footer language={language} />
