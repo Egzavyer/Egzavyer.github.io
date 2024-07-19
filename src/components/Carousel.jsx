@@ -1,5 +1,7 @@
 import { Carousel, Typography, Button } from "@material-tailwind/react";
 
+import PropTypes from 'prop-types';
+
 export function CarouselWithContent({ language }) {
   const translations = {
     desc1: {
@@ -81,5 +83,9 @@ export function CarouselWithContent({ language }) {
     </div>
   );
 }
+
+CarouselWithContent.propTypes = {
+  language: PropTypes.string.isRequired
+};
 
 export default CarouselWithContent;

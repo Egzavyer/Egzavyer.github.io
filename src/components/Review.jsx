@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Review = ({ name, reviewText, rating }) => {
     return (
         <div className="bg-text p-6 rounded-lg shadow-lg max-w-md mx-auto my-4 font-body">
@@ -8,6 +10,12 @@ const Review = ({ name, reviewText, rating }) => {
             </div>
         </div>
     );
+};
+
+Review.propTypes = {
+    name: PropTypes.string.isRequired,
+    reviewText: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
 };
 
 export default Review;

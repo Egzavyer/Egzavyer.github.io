@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function Login({ language, setIsAuthenticated, setUsername }) {
     const translations = {
@@ -69,5 +70,11 @@ function Login({ language, setIsAuthenticated, setUsername }) {
         </form>
     );
 }
+
+Login.propTypes = {
+    language: PropTypes.string.isRequired,
+    setIsAuthenticated: PropTypes.func.isRequired,
+    setUsername: PropTypes.func.isRequired,
+};
 
 export default Login;

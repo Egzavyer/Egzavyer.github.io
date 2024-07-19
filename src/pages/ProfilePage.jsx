@@ -1,5 +1,6 @@
+import PropTypes from 'prop-types';
 
-function ProfileScreen({ language, username, userEvents }) {
+function ProfileScreen({ language, userEvents }) {
     const translations = {
         myEvents: {
             en: "Events",
@@ -22,5 +23,10 @@ function ProfileScreen({ language, username, userEvents }) {
         </main>
     );
 }
+
+ProfileScreen.propTypes = {
+    language: PropTypes.string.isRequired,
+    userEvents: PropTypes.array.isRequired,
+};
 
 export default ProfileScreen;

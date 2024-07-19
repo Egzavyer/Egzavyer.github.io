@@ -185,6 +185,7 @@ const GameViewerPage = ({ language, games }) => {
 };
 
 GameViewerPage.propTypes = {
+  language: PropTypes.string.isRequired,
   games: PropTypes.array.isRequired,
 };
 export default GameViewerPage;

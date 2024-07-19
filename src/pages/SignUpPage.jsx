@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function Signup({ language, setIsAuthenticated, setUsername }) {
 
@@ -91,5 +92,11 @@ function Signup({ language, setIsAuthenticated, setUsername }) {
         </form>
     );
 }
+
+Signup.propTypes = {
+    language: PropTypes.string.isRequired,
+    setIsAuthenticated: PropTypes.func.isRequired,
+    setUsername: PropTypes.func.isRequired,
+};
 
 export default Signup;

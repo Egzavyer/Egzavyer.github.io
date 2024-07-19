@@ -44,6 +44,7 @@ const GameGrid = ({ language, games, searchQuery, filter }) => {
 };
 
 GameGrid.propTypes = {
+    language: PropTypes.string.isRequired,
     games: PropTypes.array.isRequired,
     searchQuery: PropTypes.string.isRequired,
     filter: PropTypes.object.isRequired,

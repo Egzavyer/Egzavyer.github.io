@@ -88,7 +88,11 @@ function Navbar({ language, setLanguage, isAuthenticated, setIsAuthenticated, us
 
 Navbar.propTypes = {
   language: PropTypes.string.isRequired,
-  setLanguage: PropTypes.func.isRequired
+  setLanguage: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  setIsAuthenticated: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
+  setUsername: PropTypes.func.isRequired
 };
 
 export default Navbar;

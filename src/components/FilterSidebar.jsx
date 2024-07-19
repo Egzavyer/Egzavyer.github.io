@@ -98,6 +98,7 @@ const FilterSidebar = ({ language, filter, setFilter }) => {
 };
 
 FilterSidebar.propTypes = {
+    language: PropTypes.string.isRequired,
     filter: PropTypes.object.isRequired,
     setFilter: PropTypes.func.isRequired
 };

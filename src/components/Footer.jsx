@@ -1,7 +1,7 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Footer({ language }) {
     const translations = {
@@ -46,5 +46,9 @@ function Footer({ language }) {
         </footer>
     );
 }
+
+Footer.propTypes = {
+    language: PropTypes.string.isRequired,
+};
 
 export default Footer;

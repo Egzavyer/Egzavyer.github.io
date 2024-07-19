@@ -1,5 +1,6 @@
 import Carousel from '../components/Carousel';
 import EventCard from '../components/EventCard';
+import PropTypes from 'prop-types';
 
 function Landing({ language }) {
   const translations = {
@@ -39,5 +40,9 @@ function Landing({ language }) {
     </>
   );
 }
+
+Landing.propTypes = {
+  language: PropTypes.string.isRequired,
+};
 
 export default Landing;

@@ -44,6 +44,7 @@ function ThreadContent({ thread, username }) {
 }
 
 ThreadContent.propTypes = {
+    username: PropTypes.string.isRequired,
     thread: PropTypes.object.isRequired,
 };
 

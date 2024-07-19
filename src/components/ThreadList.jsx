@@ -1,5 +1,6 @@
 import ThreadRow from "./ThreadRow";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 function ThreadList({ username }) {
     const [threads, setThreads] = useState([
@@ -108,5 +109,10 @@ function ThreadList({ username }) {
         </div>
     );
 }
+
+ThreadList.propTypes = {
+    username: PropTypes.string.isRequired,
+
+};
 
 export default ThreadList;

@@ -26,6 +26,7 @@ const SearchBar = ({ language, searchQuery, setSearchQuery }) => {
 };
 
 SearchBar.propTypes = {
+    language: PropTypes.string.isRequired,
     searchQuery: PropTypes.string.isRequired,
     setSearchQuery: PropTypes.func.isRequired,
 };

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import FilterSidebar from '../components/FilterSidebar'
 import SearchBar from '../components/SearchBar'
 import GameGrid from '../components/GameGrid'
+import PropTypes from 'prop-types';
 
 const Games = ({ language }) => {
 
@@ -31,5 +32,9 @@ const Games = ({ language }) => {
     </>
   )
 }
+
+Games.propTypes = {
+  language: PropTypes.string.isRequired,
+};
 
 export default Games

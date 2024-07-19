@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ThreadList from '../components/ThreadList';
 import Modal from '../components/Modal';
+import PropTypes from 'prop-types';
 
 function Community({ language, username, setUserEvents }) {
   const translations = {
@@ -84,5 +85,11 @@ function Community({ language, username, setUserEvents }) {
     </>
   );
 }
+
+Community.propTypes = {
+  language: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  setUserEvents: PropTypes.func.isRequired,
+};
 
 export default Community;

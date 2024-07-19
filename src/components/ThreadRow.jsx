@@ -28,6 +28,7 @@ ThreadRow.propTypes = {
     }).isRequired,
     isExpanded: PropTypes.bool.isRequired,
     onToggle: PropTypes.func.isRequired,
+    username: PropTypes.string.isRequired,
 };
 
 export default ThreadRow;
