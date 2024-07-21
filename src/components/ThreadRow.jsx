@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import ThreadContent from './ThreadContent';
-import Logo from '../assets/logo.svg';
+import Logo from '../../public/assets/logo.svg';
 
 function ThreadRow({ thread, isExpanded, onToggle, username }) {
     return (

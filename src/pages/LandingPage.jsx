@@ -31,9 +31,9 @@ function Landing({ language }) {
             {translations.upcomingEvents[language]}
           </h1>
           <div className='lg:flex flex-row gap-20 pt-6'>
-            <EventCard imagePath="src/assets/Events/skullgirls.jpg" name="Skullgirls Tournament" description={translations.skullgirlsTournament[language]} link="#" />
-            <EventCard imagePath="src/assets/Events/gamejam.jpg" name="HubJam" description={translations.hubJam[language]} link="#" />
-            <EventCard imagePath="src/assets/Events/ultrakill.jpg" name="Ultrakill Speedruns" description={translations.ultrakillSpeedruns[language]} link="#" />
+            <EventCard imagePath="/assets/Events/skullgirls.jpg" name="Skullgirls Tournament" description={translations.skullgirlsTournament[language]} link="#" />
+            <EventCard imagePath="/assets/Events/gamejam.jpg" name="HubJam" description={translations.hubJam[language]} link="#" />
+            <EventCard imagePath="/assets/Events/ultrakill.jpg" name="Ultrakill Speedruns" description={translations.ultrakillSpeedruns[language]} link="#" />
           </div>
         </div>
       </div>

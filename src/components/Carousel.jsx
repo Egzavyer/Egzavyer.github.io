@@ -22,7 +22,7 @@ export function CarouselWithContent({ language }) {
       <Carousel>
         <div className="relative h-full w-full">
           <img
-            src="src/assets/Carousel/1.jpg"
+            src="/assets/Carousel/1.jpg"
             alt="image 1"
             className="h-full w-full object-cover"
           />
@@ -51,7 +51,7 @@ export function CarouselWithContent({ language }) {
 
         <div className="relative h-full w-full">
           <img
-            src="src/assets/Carousel/2.jpg"
+            src="/assets/Carousel/2.jpg"
             alt="image 1"
             className="h-full w-full object-cover"
           />
