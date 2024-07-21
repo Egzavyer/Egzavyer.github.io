@@ -72,7 +72,7 @@ function Signup({ language, setIsAuthenticated, setUsername }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto my-8 font-body">
+        <form onSubmit={handleSubmit} className="max-w-md mx-auto my-8 font-body min-h-screen">
             <div className="mb-4">
                 <label className="block text-primary text-xl font-display mb-2">{translations.username[language]}</label>
                 <input type="text" name="username" value={userDetails.username} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-secondary leading-tight focus:outline-none focus:shadow-outline" />

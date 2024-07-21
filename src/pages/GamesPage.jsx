@@ -22,7 +22,7 @@ const Games = ({ language }) => {
 
   return (
     <>
-      <div className='flex'>
+      <div className='flex min-h-screen'>
         <FilterSidebar language={language} filter={filter} setFilter={setFilter} />
         <div className='flex-1'>
           <SearchBar language={language} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />

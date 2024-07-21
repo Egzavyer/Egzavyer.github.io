@@ -104,7 +104,7 @@ const GameViewerPage = ({ language, games }) => {
   }
 
   return (
-    <div className="p-8 text-primary">
+    <div className="p-8 text-primary min-h-screen">
       <h1 className="text-8xl lg:mx-10 mb-4 font-display sm:text-6xl">{game.title}</h1>
       <div className="flex mb-4 flex-col sm:flex-row items-center justify-center font-display lg:gap-64 sm:gap-14">
         <img src={game.image} alt={game.title} className="sm:w-1/2 sm:h-auto lg:h-96 object-cover" />

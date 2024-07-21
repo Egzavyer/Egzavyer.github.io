@@ -53,7 +53,7 @@ function Community({ language, username, setUserEvents }) {
 
   return (
     <>
-      <div className="flex-grow p-6 font-body text-primary">
+      <div className="flex-grow p-6 font-body text-primary ">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-5xl font-display">{translations.communityPosts[language]}</h1>
           <button

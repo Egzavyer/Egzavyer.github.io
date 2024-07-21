@@ -25,7 +25,7 @@ function Landing({ language }) {
   return (
     <>
       <Carousel language={language} />
-      <div className="flex container mx-auto justify-center py-10">
+      <div className="flex container mx-auto justify-center py-10 min-h-screen">
         <div className='flex flex-col'>
           <h1 className='font-display lg:text-8xl md:text-7xl text-primary text-center'>
             {translations.upcomingEvents[language]}
