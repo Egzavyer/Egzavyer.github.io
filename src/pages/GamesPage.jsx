@@ -10,8 +10,8 @@ const Games = ({ language }) => {
   const [filter, setFilter] = useState({ genre: '', platform: '', sort: 'High-to-Low' });
   const [games, setGames] = useState([]);
 
-  let documentTitle = 'src/gamesEN.json';
-  { language === 'en' ? documentTitle = 'src/gamesEN.json' : documentTitle = 'src/gamesFR.json' }
+  let documentTitle = '/gamesEN.json';
+  { language === 'en' ? documentTitle = '/gamesEN.json' : documentTitle = '/gamesFR.json' }
 
   useEffect(() => {
     fetch(documentTitle)
