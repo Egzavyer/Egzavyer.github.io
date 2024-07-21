@@ -78,7 +78,7 @@ function Community({ language, username, setUserEvents }) {
               <label htmlFor="endDate">{translations.endDate[language]}</label>
               <input type="date" id="endDate" name="endDate" required />
             </div>
-            <button className="mt-4 bg-green-600 text-text py-2 px-4 rounded" type="submit">{translations.submit[language]}</button>
+            <button className="mt-4 bg-primary text-text py-2 px-4 rounded" type="submit">{translations.submit[language]}</button>
           </form>
         </Modal>
       )}

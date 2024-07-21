@@ -17,7 +17,7 @@ function Modal({ onClose, children }) {
             >
                 {children}
                 <button
-                    className="mt-4 bg-red-600 text-text py-2 px-4 rounded w-full"
+                    className="mt-4 bg-secondary text-text py-2 px-4 rounded w-full"
                     onClick={onClose}
                 >
                     Cancel
