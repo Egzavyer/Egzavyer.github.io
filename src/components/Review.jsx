@@ -21,11 +21,11 @@ const Review = ({ id, name, reviewText, rating, onDelete }) => {
 };
 
 Review.propTypes = {
-    id: PropTypes.number.isRequired, // Assuming 'id' is a number for identifying the review
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     reviewText: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
-    onDelete: PropTypes.func.isRequired, // PropType for the delete callback
+    onDelete: PropTypes.func.isRequired,
 };
 
 export default Review;
