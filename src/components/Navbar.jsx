@@ -69,7 +69,7 @@ function Navbar({ language, setLanguage, isAuthenticated, setIsAuthenticated, us
                 <>
                   <p className="font-body block px-4 py-2 text-sm text-secondary">Welcome, {username}</p>
                   <Link to="/profile" className="block px-4 py-2 text-sm text-secondary hover:bg-text">{translations.viewProfile[language]}</Link>
-                  <Link to="/logout" className="block px-4 py-2 text-sm text-secondary hover:bg-text" onClick={() => handleLogout()}>{translations.logout[language]}</Link>
+                  <Link to="#" className="block px-4 py-2 text-sm text-secondary hover:bg-text" onClick={() => handleLogout()}>{translations.logout[language]}</Link>
                 </>
               )}
             </div>
