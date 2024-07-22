@@ -13,6 +13,14 @@ const GameViewerPage = ({ language, games }) => {
     rating: '',
   });
 
+  const deleteReview = (reviewId) => {
+    const isConfirmed = window.confirm('Are you sure you want to delete this review?');
+    if (isConfirmed) {
+      setReviews(reviews.filter(review => review.id !== reviewId));
+    }
+  };
+
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewReview({ ...newReview, [name]: value });
@@ -166,7 +174,7 @@ const GameViewerPage = ({ language, games }) => {
                   </div>
                 </form>
                 {reviews.map((review, index) => (
-                  <Review key={index} name={review.name} reviewText={review.reviewText} rating={review.rating} />
+                  <Review key={index} name={review.name} reviewText={review.reviewText} rating={review.rating} onDelete={deleteReview} />
                 ))}
                 <div>
                   <Review
