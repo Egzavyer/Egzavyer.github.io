@@ -235,58 +235,56 @@ export function Navbar({
         </div>
       </div>
       <m.aside
-          ref={sidebarRef}
-          id="mobile-menu"
-          role="dialog"
-          aria-modal="true"
-          aria-label={t("navbar.mobileMenu")}
-          aria-hidden={!isSidebarOpen}
-          inert={!isSidebarOpen}
-          initial={false}
-          animate={{
-            x: isSidebarOpen ? 0 : "100%",
-            opacity: isSidebarOpen ? 1 : 0,
-          }}
-          transition={{ type: "spring", stiffness: 300, damping: 32 }}
-          className={`fixed inset-y-0 right-0 z-20 flex w-full max-w-sm justify-center border-l border-text/15 bg-primary-300/95 px-8 shadow-2xl backdrop-blur-2xl xl:hidden ${
-            isSidebarOpen
-              ? ""
-              : "pointer-events-none"
-          }`}
-        >
-          <div className="flex flex-col items-center justify-center gap-12 text-center">
-            <div className="text-xl font-semibold tracking-tight">
-              <a
-                href="#home"
-                className="rounded-lg px-3 py-2 transition-colors hover:text-accent"
-                onClick={(event) => {
-                  event.preventDefault();
-                  activateSection("home");
-                  setIsSidebarOpen(false);
-                  requestAnimationFrame(() =>
-                    scrollToSection(heroSectionRef, "home"),
-                  );
-                }}
-              >
-                Xavier Lermusieaux
-              </a>
-            </div>
-            <NavbarLinks
-              aboutSectionRef={aboutSectionRef}
-              experienceSectionRef={experienceSectionRef}
-              projectsSectionRef={projectsSectionRef}
-              contactSectionRef={contactSectionRef}
-              activeSection={activeSection}
-              onActivate={activateSection}
-              onNavigate={() => setIsSidebarOpen(false)}
-            />
-            <NavbarButtons
-              theme={theme}
-              language={language}
-              toggleLanguage={toggleLanguage}
-              toggleTheme={toggleTheme}
-            />
+        ref={sidebarRef}
+        id="mobile-menu"
+        role="dialog"
+        aria-modal="true"
+        aria-label={t("navbar.mobileMenu")}
+        aria-hidden={!isSidebarOpen}
+        inert={!isSidebarOpen}
+        initial={false}
+        animate={{
+          x: isSidebarOpen ? 0 : "100%",
+          opacity: isSidebarOpen ? 1 : 0,
+        }}
+        transition={{ type: "spring", stiffness: 300, damping: 32 }}
+        className={`fixed inset-y-0 right-0 z-20 flex w-full max-w-sm justify-center border-l border-text/15 bg-primary-300/95 px-8 shadow-2xl backdrop-blur-2xl xl:hidden ${
+          isSidebarOpen ? "" : "pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col items-center justify-center gap-12 text-center">
+          <div className="text-xl font-semibold tracking-tight">
+            <a
+              href="#home"
+              className="rounded-lg px-3 py-2 transition-colors hover:text-accent"
+              onClick={(event) => {
+                event.preventDefault();
+                activateSection("home");
+                setIsSidebarOpen(false);
+                requestAnimationFrame(() =>
+                  scrollToSection(heroSectionRef, "home"),
+                );
+              }}
+            >
+              Xavier Lermusieaux
+            </a>
           </div>
+          <NavbarLinks
+            aboutSectionRef={aboutSectionRef}
+            experienceSectionRef={experienceSectionRef}
+            projectsSectionRef={projectsSectionRef}
+            contactSectionRef={contactSectionRef}
+            activeSection={activeSection}
+            onActivate={activateSection}
+            onNavigate={() => setIsSidebarOpen(false)}
+          />
+          <NavbarButtons
+            theme={theme}
+            language={language}
+            toggleLanguage={toggleLanguage}
+            toggleTheme={toggleTheme}
+          />
+        </div>
       </m.aside>
       <m.div
         initial={{ opacity: 0, y: -20 }}
@@ -418,9 +416,7 @@ function NavbarLink({
         href={`#${sectionId}`}
         aria-current={isActive ? "location" : undefined}
         className={`block rounded-lg px-4 py-2 transition-colors hover:bg-text/5 hover:text-accent ${
-          isActive
-            ? "bg-text/8 text-accent"
-            : ""
+          isActive ? "bg-text/8 text-accent" : ""
         }`}
         onClick={handleClick}
       >
@@ -448,27 +444,40 @@ function NavbarButtons({
   return (
     <div className="flex items-center text-base">
       <ul className="flex flex-col items-center gap-6 xl:flex-row xl:gap-2">
-        <li>
-          <a
-            href="https://drive.google.com/file/d/1roKglCaNw7mJe6H3dIWoeRh0uEqDQYDY/view"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-lg border border-text/30 px-4 py-2 font-medium transition-all hover:border-accent hover:bg-accent hover:text-accent-contrast"
-            aria-label={`${t("navbar.resume")} (${t("navbar.newTab")})`}
-          >
-            {t("navbar.resume")}
-          </a>
-        </li>
-        <NavbarButton onClick={toggleLanguage} ariaLabel={`${language}: ${t("navbar.changeLanguage", { language: language === "EN" ? "Français" : "English" })}`}>
-          {language}
+        <NavbarButton
+          onClick={toggleLanguage}
+          ariaLabel={t("navbar.changeLanguage", {
+            language: language === "EN" ? "Français" : "English",
+          })}
+        >
+          {language === "EN" ? "FR" : "EN"}
         </NavbarButton>
-        <NavbarButton onClick={toggleTheme} ariaLabel={t(theme === "light" ? "navbar.useDarkTheme" : "navbar.useLightTheme")}>
+        <NavbarButton
+          onClick={toggleTheme}
+          ariaLabel={t(
+            theme === "light" ? "navbar.useDarkTheme" : "navbar.useLightTheme",
+          )}
+        >
           {theme === "light" ? (
             <IconMoon aria-hidden="true" stroke={1} size={30} />
           ) : (
             <IconSun aria-hidden="true" stroke={1} size={30} />
           )}
         </NavbarButton>
+        <li>
+          <m.a
+            href="https://drive.google.com/file/d/1roKglCaNw7mJe6H3dIWoeRh0uEqDQYDY/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ y: -2, scale: 1.035 }}
+            whileTap={{ y: 0, scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 450, damping: 24 }}
+            className="block rounded-lg border border-accent bg-accent px-4 py-2 font-medium text-accent-contrast shadow-sm shadow-accent/15 transition-[filter,box-shadow] duration-200 hover:brightness-105 hover:shadow-lg hover:shadow-accent/30"
+            aria-label={`${t("navbar.resume")} (${t("navbar.newTab")})`}
+          >
+            {t("navbar.resume")}
+          </m.a>
+        </li>
       </ul>
     </div>
   );

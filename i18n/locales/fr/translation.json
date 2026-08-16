@@ -21,13 +21,13 @@
   },
   "about": {
     "blurb": {
-      "title": "À Propos de Moi",
+      "title": "À propos de moi",
       "line1": "Je suis étudiant en 4e année en Génie Logiciel à l'Université d'Ottawa, au Canada.",
       "line2": "Au cours des dix dernières années, j'ai développé des projets allant des systèmes d'exploitation et des outils de débogage aux applications d'intelligence artificielle et aux plateformes web modernes. J'aime m'attaquer à des problèmes d'ingénierie complexes, découvrir de nouvelles technologies et comprendre les systèmes de A à Z.",
       "line3": "Ce qui me motive, c'est la possibilité de créer des logiciels qui améliorent la vie des gens et contribuent à la prochaine génération de technologies."
     },
     "techs": {
-      "title": "Mes Outils Préférés"
+      "title": "Mes outils préférés"
     }
   },
   "experience": {
@@ -39,7 +39,7 @@
         "term1Dates": "Été et Automne 2025 (8 mois)",
         "term2Dates": "Été 2026 (4 mois)",
         "company": "Ross Video",
-        "title": "Dévelopeur Logiciel Coop - Robotique",
+        "title": "Dévelopeur logiciel coop - Robotique",
         "description": "Développement d’une plateforme de configuration robotique full-stack pour les environnements de production vidéo en direct, comprenant la création d’outils d’édition interactifs React/PixiJS et de services WebSocket Spring Boot pour la synchronisation des données en temps réel. Amélioration de l'utilisabilité, des performances et de l’évolutivité de l’application."
       },
       "ised": {
@@ -48,7 +48,7 @@
         "term1Dates": "Été 2023 (4 mois)",
         "term2Dates": "Automne 2024 (4 mois)",
         "company": "ISED Canada",
-        "title": "Officier en Logiciel et Opérations Coop",
+        "title": "Agent en logiciel et opérations coop",
         "description": "Développement et maintenance d’outils internes et d’applications Salesforce pour soutenir des programmes de télécommunications à grande échelle. Automatisation des flux de travail à l’aide de Java, SQL, VBA et Salesforce, améliorant ainsi l’efficacité opérationnelle tout en collaborant avec les équipes d’ingénierie et les parties prenantes pour rationaliser la réalisation des projets."
       }
     }
